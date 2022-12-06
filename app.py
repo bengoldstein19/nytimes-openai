@@ -12,10 +12,10 @@ app = Flask(__name__)
 # Create a Flask app instance
 
 # Set the secret key for encrypting cookies
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.secret_key = os.environ.get('SECRET_KEY')
 
 # Set the OpenAI API key
-openai.api_key = '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'
+openai.api_key = os.environ.get('API_KEY')
 
 #Set up the database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
