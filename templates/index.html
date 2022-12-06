@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="page-header">New York Times: OpenAI Edition</h1>
+        {% for article in articles %}
+            <div class="card article-card">
+                <div class="card-body">
+                    <h3>{{ article.title }}</h3>
+                    {% if article.img_src %}
+                        <img src="{{ article.img_src }}" alt="Article image">
+                    {% endif %}
+                    {{ article.content | safe }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
