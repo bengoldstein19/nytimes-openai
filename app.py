@@ -103,7 +103,7 @@ def index():
 
         # Extract the front page layout and article titles from the files in the current directory
         layout = ""
-        article_titles = [f[:-4] for f in os.listdir(cwd) if f.endswith('.txt') and not f == "runtime.txt" and not f == requirements.txt]
+        article_titles = [f[:-4] for f in os.listdir(cwd) if f.endswith('.txt') and not f == "runtime.txt" and not f == "requirements.txt"]
 
         # Create a list of articles to pass to the template
         articles = []
