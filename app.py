@@ -12,7 +12,7 @@ app = Flask(__name__)
 # Create a Flask app instance
 
 # Set the secret key for encrypting cookies
-app.secret_key = os.environ.get('SECRET_KEY')
+app.secret_key = bytes(os.environ.get('SECRET_KEY', ''), 'utf-8')
 
 # Set the OpenAI API key
 openai.api_key = os.environ.get('API_KEY')
